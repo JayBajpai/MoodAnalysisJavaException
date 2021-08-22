@@ -1,28 +1,29 @@
 package src.main.java.com.exception;
 
 public class MoodAnalyser {
-	 private String message;
 
-	    public MoodAnalyser(String message) {
-	        this.message = message;
-	    }
+    private String message;
 
-	    public String analyseMood(String message) throws MoodAnalysisException {
-	        this.message = message;
-	        return analyseMood();
-	    }
+    public MoodAnalyser(String message) {
+        this.message = message;
+    }
 
-	    public String analyseMood() throws MoodAnalysisException {
+    public String analyseMood(String message) throws MoodAnalysisException {
+        this.message = message;
+        return analyseMood();
+    }
 
-	        try {
+    public String analyseMood() throws MoodAnalysisException {
 
-	            if (message.contains("Sad")) {
-	                return "SAD";
-	            } else {
-	                return "HAPPY";
-	            }
-	        }catch(NullPointerException e){
-	           throw new MoodAnalysisException("PLease enter proper message");
-	        }
-	    }
+        try {
+
+            if (message.contains("Sad")) {
+                return "SAD";
+            } else {
+                return "HAPPY";
+            }
+        }catch(NullPointerException e){
+           throw new MoodAnalysisException("PLease enter proper message");
+        }
+    }
 }
